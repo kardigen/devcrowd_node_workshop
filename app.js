@@ -5,7 +5,15 @@
 
 var
   express         = require('express'),
-  RedisStore      = require('connect-redis')(express)
+  RedisStore      = require('connect-redis')(express),
+  mongoose        = require('mongoose')
+
+
+// setup db connection
+mongoose.connection.on('error',function(err){
+  throw new Error('DB connection error: ' + err)
+})
+mongoose.connect('mongodb://localhost/test')
 
 var app = module.exports = express.createServer();
 

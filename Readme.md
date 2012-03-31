@@ -5,7 +5,8 @@
 * bacis app creation - node package manager
 * first test with mocha
 * refactoring - remove routes module
-* mongodb support
+* add redis session support
+* add mongodb support
 * home page and registration
 
 ## Bacis app creation - #step0
@@ -65,3 +66,14 @@ run redis
         redis-server ./db/conf/redis.conf &
 
 Then restart app.js and run tests
+
+## Add mongodb support - #step4
+Add mongoose module dependency
+
+        npm install mongoose --save
+
+Write and run test db connection - see tests/test_db.js
+Then start mongo server and run tests again
+
+        mongod --dbpath ./db/data --logpath ./db/logs/mongodb.log --logappend &
+
