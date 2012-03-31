@@ -22,6 +22,8 @@ var app = module.exports = express.createServer();
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  /* set jade engine inherence available */
+  app.set('view options', { layout: false });
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());

@@ -1,2 +1,28 @@
-h1= title
-p Welcome to #{title}
+extend layout
+block head append
+  script(src='/javascripts/index.js')
+block content
+  .row.margin-top30px
+    .span5.offset1.color-white
+      h1 Welcome
+      h2 Register and spread ideas NOW!
+
+    form#loginPanel.well.span3
+      legend Login or register
+      label login:
+      input(type="text",size="20")#loginBox.span3
+      label password:
+      input(type="password",size="20")#passwordBox
+      a(href="#")#loginAction.btn.btn-success.pull-right
+        i.icon-play.icon-white.margin-right5px
+        span Get in
+      #registerPanel.hide
+        label re-type password:
+        input(type="password",size="20")#retypedPasswordBox.span3
+        a(href="#")#loginAction.btn.btn-inverse
+          i.icon-backward.icon-white.margin-right5px
+          span Back
+        a(href="#")#loginAction.btn.btn-success.pull-right
+          i.icon-ok.icon-white.margin-right5px
+          span Register
+

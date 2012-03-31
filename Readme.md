@@ -77,3 +77,4 @@ Then start mongo server and run tests again
 
         mongod --dbpath ./db/data --logpath ./db/logs/mongodb.log --logappend &
 
+## Home page and registration
