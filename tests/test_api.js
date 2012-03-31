@@ -28,15 +28,10 @@ describe('API tests:',function(){
           var parsedBody =$(body)
           should.exist(parsedBody)
 
-          var header = $('h1',parsedBody)
-          should.exist(header)
-          header.should.have.length(1)
-          header.text().should.be.equal('Express')
+          var loginPanel = $('#loginPanel',parsedBody)
+          should.exist(loginPanel)
+          loginPanel.should.have.length(1)
 
-          var paragraph = $('p',parsedBody)
-          should.exist(paragraph)
-          paragraph.should.have.length(1)
-          paragraph.text().should.be.equal('Welcome to Express')
           done()
         }
       })
