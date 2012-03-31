@@ -3,7 +3,9 @@
  * Module dependencies.
  */
 
-var express = require('express')
+var
+  express         = require('express'),
+  RedisStore      = require('connect-redis')(express)
 
 var app = module.exports = express.createServer();
 
@@ -15,7 +17,14 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.session({ secret: 'your secret here' }));
+
+  //initialize redis session support
+  app.use(express.session({
+    key: 'cookieId',
+    secret: 'cookieSecret',
+    store: new RedisStore,
+    maxAge: 12*60*60*1000 //sessionMaxAge msec
+  }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });

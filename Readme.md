@@ -48,5 +48,20 @@ TIP: there is special module for node.js to app 'hot reload' - to use it run
 Before do refactoring create test to check / response.
 Next change code base and check if test pass.
 
+## Add redis session support - #step3
+Add redis node module
 
+        npm install connect-redis --save
 
+Create database dir structure
+
+        mkdir -p db/data
+        mkdir -p db/conf
+        mkdir -p db/logs
+
+Copy db/conf/redis.conf example and
+run redis
+
+        redis-server ./db/conf/redis.conf &
+
+Then restart app.js and run tests
