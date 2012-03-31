@@ -2,9 +2,9 @@
 
 ## Agenda
 * workshop overview - TDD, XP, Spread Idea, Time
-* bacis app creation
+* bacis app creation - node package manager
 * first test with mocha
-* node package manager
+* refactoring - remove routes module
 * mongodb support
 * home page and registration
 
@@ -38,4 +38,15 @@ Write simple test - see tests/test_api.js
 Run test
 
         node_modules/.bin/mocha -R spec tests/test_api.js
+
+TIP: there is special module for node.js to app 'hot reload' - to use it run
+
+        npm install supervisor -g
+        supervisor app.js
+
+## Refactoring - remove route module - #step2
+Before do refactoring create test to check / response.
+Next change code base and check if test pass.
+
+
 
