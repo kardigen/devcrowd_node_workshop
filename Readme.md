@@ -94,3 +94,5 @@ To run this tests browse url:
 
         http://localhost:3000/test/index/test.html
 
+**Task for you:** add code and test to set focus on loginBox
+when login view initialized.
