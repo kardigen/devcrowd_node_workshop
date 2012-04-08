@@ -1,0 +1,22 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Index.js tests</title>
+  <link rel="stylesheet" href="/test/lib/mocha.css" />
+  <script src="/test/lib/expect.js"></script>
+  <script src="/test/lib/mocha.js"></script>
+  <script src="/test/lib/jade.min.js"></script>
+  <script src="/lib/jquery-ui-1.8.18/js/jquery-1.7.1.min.js"></script>
+  <script>mocha.setup({ui:'bdd',globals: ['Login']})</script>
+  <script src="test.index.js"></script>
+  <script>
+    $(function(){
+      mocha.run()
+    })
+  </script>
+</head>
+<body>
+<div id="mocha"></div>
+<div id="testContainer" style="display: none"></div>
+</body>
+</html>

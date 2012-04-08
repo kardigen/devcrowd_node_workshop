@@ -27,7 +27,9 @@ Start app
 
         node app.js
         
-then open browser and go to localhost:3000
+then open browser and go to:
+
+        http://localhost:3000
 
 ## First test with mocha - #step1
 Install dependencies
@@ -77,4 +79,18 @@ Then start mongo server and run tests again
 
         mongod --dbpath ./db/data --logpath ./db/logs/mongodb.log --logappend &
 
-## Home page and registration
+## Home page and registration - #step5
+Take a look on basic view with presenter
+which you can find here:
+
+        /views/index.jade
+        /public/javascripts/login.js
+
+For view tests see here:
+
+        /client_tests/test/index/test.index.js
+
+To run this tests browse url:
+
+        http://localhost:3000/test/index/test.html
+

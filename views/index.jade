@@ -1,28 +1,55 @@
 extend layout
-block head append
-  script(src='/javascripts/index.js')
+block append head
+  script(src='/javascripts/login.js')
 block content
-  .row.margin-top30px
-    .span5.offset1.color-white
-      h1 Welcome
-      h2 Register and spread ideas NOW!
+  script
+    $(document).ready(function() {
+      var login = new Login(client)
+      login.init()
+    });
+  .row
+    #leftPanel.span4
+      #welcomePanel.span3.color-white.margin-top30px
+        h1 Welcome
+        h3 Register and spread ideas NOW!
 
-    form#loginPanel.well.span3
-      legend Login or register
-      label login:
-      input(type="text",size="20")#loginBox.span3
-      label password:
-      input(type="password",size="20")#passwordBox
-      a(href="#")#loginAction.btn.btn-success.pull-right
-        i.icon-play.icon-white.margin-right5px
-        span Get in
-      #registerPanel.hide
-        label re-type password:
-        input(type="password",size="20")#retypedPasswordBox.span3
-        a(href="#")#loginAction.btn.btn-inverse
-          i.icon-backward.icon-white.margin-right5px
-          span Back
+      form#loginPanel.well.span3.margin-top20px
+        legend Login or register
+        label login:
+        input(type="text",size="20")#loginBox.span3
+        label password:
+        input(type="password",size="20")#passwordBox
         a(href="#")#loginAction.btn.btn-success.pull-right
-          i.icon-ok.icon-white.margin-right5px
-          span Register
+          i.icon-play.icon-white.margin-right5px
+          span Get in
+        #registerPanel.hide
+          label re-type password:
+          input(type="password",size="20")#retypedPasswordBox.span3
+          a(href="#")#backAction.btn.btn-inverse
+            i.icon-backward.icon-white.margin-right5px
+            span Back
+          a(href="#")#registerAction.btn.btn-success.pull-right
+            i.icon-ok.icon-white.margin-right5px
+            span Register
+      #userPanel.span3.color-white.hide
+        form#newIdeaPanel.well.span3
+          legend New idea
+          label Your idea:
+          textarea#ideaBox.span3
+          a(href="#")#newIdeaAction.btn.btn-success.pull-right
+            i.icon-envelope.icon-white.margin-right5px
+            span Send
+
+    #rightPanel.span7.well
+      h1 Best ideas this week
+      table.table.table-bordered.table-striped.margin-top15px
+        thead
+          tr
+            th Idea
+            th.span1 votes
+        tbody
+          tr
+            td Open and free ideas spreading service
+            td 123
+
 

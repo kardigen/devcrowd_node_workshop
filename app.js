@@ -41,6 +41,8 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(express.static(__dirname + '/client_tests'));
+  app.use(express.static(__dirname + '/views'));
 });
 
 app.configure('production', function(){
