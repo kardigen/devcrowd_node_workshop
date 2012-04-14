@@ -98,4 +98,6 @@ To run this tests browse url:
 **Task for you:** add code and test to set focus on loginBox
 when login view initialized.
 
-## Home page and registration page services - #step5
+## Home page and registration page services - #step6
+Create model, services and tests for registration.
+Integrate with existing view
