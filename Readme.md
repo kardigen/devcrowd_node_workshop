@@ -7,7 +7,8 @@
 * refactoring - remove routes module
 * add redis session support
 * add mongodb support
-* home page and registration
+* home page and registration page view
+* home page and registration page services
 
 ## Bacis app creation - #step0
 
@@ -79,7 +80,7 @@ Then start mongo server and run tests again
 
         mongod --dbpath ./db/data --logpath ./db/logs/mongodb.log --logappend &
 
-## Home page and registration - #step5
+## Home page and registration page view - #step5
 Take a look on basic view with presenter
 which you can find here:
 
@@ -96,3 +97,5 @@ To run this tests browse url:
 
 **Task for you:** add code and test to set focus on loginBox
 when login view initialized.
+
+## Home page and registration page services - #step5

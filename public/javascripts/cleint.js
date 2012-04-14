@@ -1,8 +1,11 @@
 /**
  * AJAX services wrapper
  */
+
+
 client = {
 // ----------------- UTILS ---------------
+  base: 'http://' + location.host,
   _postObject: function(url, obj, fn){
     $.ajax({
       url:this.base+url,
@@ -17,7 +20,7 @@ client = {
         fn(jqXHR)
       }
     })
-  }
+  },
 
   _deleteObject: function(url, fn){
     $.ajax({
@@ -30,7 +33,7 @@ client = {
         fn(jqXHR)
       }
     })
-  }
+  },
 
   _putObject: function(url, obj, fn){
     obj = obj ? obj : {}
@@ -47,7 +50,7 @@ client = {
         fn(jqXHR)
       }
     })
-  }
+  },
 
   _getObject: function(url,data, fn){
     //data is optional
@@ -68,15 +71,17 @@ client = {
         fn(jqXHR)
       }
     })
-  }
+  },
 
 // ------------- API ---------------
 
   authenticate: function(credentials,cb){
-    cb(null,{status:'wrong_login'})
+    this._postObject('/authentication',credentials,cb)
   },
 
   createNewUser: function(data,cb){
-    cb()
+    this._postObject('/users',data,cb)
   }
 }
+
+

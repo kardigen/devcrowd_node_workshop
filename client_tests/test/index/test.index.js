@@ -7,7 +7,7 @@ describe('Login tests: ',function(){
     authenticateCount: 0,
     authenticate: function(credentials,cb){
       this.authenticateCount += 1;
-      cb(null,{status:'wrong_login'})
+      cb(null,{status:'unknown_login'})
     },
 
 

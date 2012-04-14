@@ -11,7 +11,7 @@ Login = function(client){
 
       if(login && login.length && password && password.length){
         client.authenticate({login:login,password:password},function(err,res){
-          if(res.status == 'wrong_login'){
+          if(res.status == 'unknown_login'){
             $('#loginAction').addClass('hide')
             $('#registerPanel').removeClass('hide')
           }
@@ -35,6 +35,7 @@ Login = function(client){
         && retypedPassword && retypedPassword.length
         && retypedPassword == password){
         client.createNewUser({login:login,password:password},function(err){
+          console.log(err)
           if(!err){
             $('#loginPanel').addClass('hide')
             $('#welcomePanel').addClass('hide')
